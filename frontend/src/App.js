@@ -1,9 +1,20 @@
+import {BrowserRouter, Routes, Route } from 'react-router-dom'
 
+import { HeroesProvider } from './context/Heroes'
+import Home from './pages/Home'
 
 const App = () => {
 
     return (
-        <p>Heroes</p>
+        <HeroesProvider>
+            <BrowserRouter>
+                <div className="container m-5">
+                    <Routes>
+                        <Route exact path="/" element={<Home />} />
+                    </Routes>
+                </div>
+            </BrowserRouter>
+        </HeroesProvider>
     )
 }
 
