@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import { HeroesContext } from '../context/Heroes';
-import CardHero from '../components/CardHero';
+import ListHeroes from '../components/CardHero';
 
 const Home = () => {
     const { heroes } = useContext(HeroesContext)
@@ -10,14 +10,12 @@ const Home = () => {
             <h1 className="text-center fw-bold">List of Heroes</h1>
             <div>
                 {heroes.map(hero => (
-                    <CardHero
+                    <ListHeroes
                         key={hero.slug}
+                        slug={hero.slug}
                         name={hero.name}
-                        power={hero.power}
-                        color={hero.color}
-                        isAlive={hero.isAlive}
-                        age={hero.age}
                         image={hero.image}
+                        button="Détails"
                     />
                 ))}
             </div>
